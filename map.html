@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""></script>
+
+    <style>
+      #mapid {
+        width:  calc(100% - 2em);
+        height: calc(100% - 2em);
+        margin: 1em;
+        border: 1px solid black;
+        margin-left:  auto;
+        margin-right: auto;
+      }
+    </style>
+
+    <script>
+      L.TileLayer.Grayscale = L.TileLayer.extend({
+      	options: {
+      		quotaRed: 21,
+      		quotaGreen: 71,
+      		quotaBlue: 8,
+      		quotaDividerTune: 0,
+      		quotaDivider: function() {
+      			return this.quotaRed + this.quotaGreen + this.quotaBlue + this.quotaDividerTune;
+      		}
+      	},
+
+      	initialize: function (url, options) {
+      		options = options || {}
+          options.crossOrigin = true;
+      		L.TileLayer.prototype.initialize.call(this, url, options);
+
+      		this.on('tileload', function(e) {
+      			this._makeGrayscale(e.tile);
+      		});
+      	},
+
+      	_createTile: function () {
+      		var tile = L.TileLayer.prototype._createTile.call(this);
+          tile.crossOrigin = "Anonymous";
+      		return tile;
+      	},
+
+      	_makeGrayscale: function (img) {
+      		if (img.getAttribute('data-grayscaled'))
+      			return;
+
+          img.crossOrigin = '';
+      		var canvas = document.createElement("canvas");
+      		canvas.width = img.width;
+      		canvas.height = img.height;
+      		var ctx = canvas.getContext("2d");
+      		ctx.drawImage(img, 0, 0);
+
+      		var imgd = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      		var pix = imgd.data;
+      		for (var i = 0, n = pix.length; i < n; i += 4) {
+                              pix[i] = pix[i + 1] = pix[i + 2] = (this.options.quotaRed * pix[i] + this.options.quotaGreen * pix[i + 1] + this.options.quotaBlue * pix[i + 2]) / this.options.quotaDivider();
+      		}
+      		ctx.putImageData(imgd, 0, 0);
+      		img.setAttribute('data-grayscaled', true);
+      		img.src = canvas.toDataURL();
+      	}
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="mapid"></div>
+
+    <script>
+      var map = L.map('mapid').setView([54.505, -4.5], 6);
+
+      new L.TileLayer.Grayscale('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, station locations from <a href="https://transportapi.com/">TransportAPI</a>',
+      }).addTo(map);
+
+      function makeCircle(lat, long) {
+        var circle = L.circle([lat, long], {
+          fill: true,
+          color: '#0b9e00',
+          fillColor: 'rgba(11, 158, 0, 0.3)',
+          radius: 7500,
+        }).addTo(map);
+      }
+
+      {% for query, station in stations %}
+      makeCircle({{ station["latitude"] }}, {{ station["longitude"] }});  // {{ query }}
+      {%- endfor %}
+    </script>
+  </body>
+</html>

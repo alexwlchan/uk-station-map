@@ -1,0 +1,4 @@
+docopt
+httpx
+inquirer
+jinja2
