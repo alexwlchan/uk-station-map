@@ -71,9 +71,9 @@ def lookup_station(query, *, app_id, app_key):
     else:
         sys.exit("Unable to find a station matching {query!r}")
 
-    cache[q] = selected
+    cache[query] = selected
     with open("_cache.json", "w") as outfile:
-        outfile.write(json.dumps(cache))
+        outfile.write(json.dumps(cache, indent=2, sort_keys=True))
 
     return selected
 
