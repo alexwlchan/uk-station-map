@@ -9,6 +9,7 @@ It uses:
 -    ✨ [**OpenStreetMap**](https://www.openstreetmap.org/) ✨ for the map tiles<br/>
 -    ✨ [**Leaflet.js**](https://leafletjs.com/) ✨ to render the map and the markers for each station<br/>
 -    ✨ [**Trainline**](https://www.transportapi.com/), [**Trainline EU**](https://github.com/trainline-eu/stations) and [**Wikipedia**](https://en.wikipedia.org/wiki/List_of_railway_stations_in_Ireland) ✨ to get the longitude/latitude coordinates of railway stations
+-   ✨ [**Choices.js**](https://github.com/jshjohnson/Choices) ✨ for the station picker box
 
 A couple of people asked, so I'm sharing the code here for them to play with -- but reader beware, this was a quick experiment, so it's fairly unpolished code.
 
