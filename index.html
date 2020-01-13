@@ -46,30 +46,7 @@
 
         const pickerManager = new PickerManager("station-picker", mapManager, stations);
       </script>
-
-      <script>
-        function createDownloadLink() {
-          leafletImage(mapManager.map, function(err, canvas) {
-            if (err !== null) {
-              console.log(err)
-              alert("Something went wrong downloading your image 😭");
-            }
-
-            var element = document.createElement("a");
-            element.setAttribute("href", canvas.toDataURL());
-            element.setAttribute("download", "ukstations.png");
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-
-            document.body.removeChild(element);
-          })
-        }
-      </script>
     </main>
-
     <footer>
       created with 💖 by <a href="https://twitter.com/alexwlchan">lexie</a>, who thinks trains are pretty cool •
       code on <a href="https://github.com/alexwlchan/uk-station-map">github</a>
