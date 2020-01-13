@@ -2,7 +2,7 @@
 
 This is a quick script I wrote to create a map showing which UK railway stations I've visited:
 
-![A map of the UK with a series of green dots overlaid.](station_map.png)
+![A map of the UK with a series of green dots overlaid.](https://github.com/alexwlchan/uk-station-map/raw/development/station_map.png)
 
 It uses:
 
