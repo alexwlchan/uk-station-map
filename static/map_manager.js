@@ -63,7 +63,7 @@ class MapManager {
     }).addTo(this.map);
   }
 
-  addMarker(label, lat, long) {
+  addMarker(label, long, lat) {
     const marker = L.circle([lat, long], {
       fill: true,
       color: '#0b9e00',

@@ -61,7 +61,7 @@ def get_wikipedia_rows():
 if __name__ == "__main__":
     from pprint import pprint
 
-    stations = []
+    stations = {}
 
     for row in get_trainline_csv_rows():
 
@@ -72,15 +72,7 @@ if __name__ == "__main__":
         if row["country"] != "GB":
             continue
 
-        stations.append(
-            {
-                "station_code": row["atoc_id"],
-                "name": row["name"],
-                "longitude": row["longitude"],
-                "latitude": row["latitude"],
-                "country": row["country"],
-            }
-        )
+        stations[row["name"]] = [row["longitude"], row["latitude"]];
 
     for row in get_wikipedia_rows():
         if row["Location"] != "Northern Ireland":
@@ -100,21 +92,12 @@ if __name__ == "__main__":
         )
         assert match is not None, long_lat_coords
 
-        stations.append(
-            {
-                "station_code": "",
-                "name": "/".join(names),
-                "longitude": match.group("longitude"),
-                "latitude": match.group("latitude"),
-                "country": "NI",
-            }
-        )
+        stations["/".join(names)] = [match.group("longitude"), match.group("latitude")]
 
-    stations = sorted(stations, key=lambda s: s["name"])
+    json_string = json.dumps(stations, separators=(',',':'), sort_keys=True)
+    js_string = f"const stations = {json_string};"
 
-    json_string = json.dumps(stations, indent=2, sort_keys=True)
+    with open("static/stations.js", "w") as out_file:
+        out_file.write(js_string)
 
-    with open("stations.json", "w") as out_file:
-        out_file.write(json_string)
-
-    print("✨ Written station coordinates to stations.json ✨")
+    print("✨ Written station coordinates to stations.js ✨")
