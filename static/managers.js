@@ -59,7 +59,7 @@ class MapManager {
     this.map.setView([54.505, -4.5], 6);
 
     new L.TileLayer.Grayscale('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, station locations from <a href="https://transportapi.com/">TransportAPI</a>',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, station data from <a href="https://github.com/trainline-eu/stations">Trainline EU</a> and <a href="https://en.wikipedia.org/wiki/List_of_railway_stations_in_Ireland">Wikipedia</a>',
     }).addTo(this.map);
   }
 
@@ -77,5 +77,69 @@ class MapManager {
   removeMarker(label) {
     this.map.removeLayer(this.markerCache[label]);
     delete this.markerCache[label];
+  }
+}
+
+class PickerManager {
+  constructor(pickerId, mapManager, stations) {
+    this.element = document.getElementById(pickerId);
+
+    this.createChoices();
+    this.setupEventListeners(mapManager, stations);
+  }
+
+  createChoices() {
+    const choices = [];
+    for (var name in stations) {
+      var data = stations[name];
+      choices.push({value: name, label: name});
+    }
+
+    const picker = new Choices(this.element, {
+      removeItemButton: true,
+      choices: choices,
+    });
+
+    // Pick a random selection of stations to illustrate the principle.
+    // Choose an integer between 3 and 7, then add those stations.
+    const randomCount = Math.floor((Math.random() * 5) + 3);
+
+    const items = [];
+    for (var i = 0; i < randomCount; i++) {
+      var chosenStation = choices[Math.floor(Math.random() * choices.length)];
+
+      var stationName = chosenStation.label;
+      var stationCoords = stations[stationName];
+      var longitude = stationCoords[0];
+      var latitude = stationCoords[1];
+      mapManager.addMarker(stationName, longitude, latitude);
+
+      items.push(chosenStation.value);
+    }
+
+    picker.setValue(items);
+  }
+
+  setupEventListeners(mapManager, stations) {
+    this.element.addEventListener(
+      "addItem",
+      function(event) {
+        var stationName = event.detail.label;
+        var stationCoords = stations[stationName];
+        var longitude = stationCoords[0];
+        var latitude = stationCoords[1];
+        mapManager.addMarker(stationName, longitude, latitude);
+      },
+      false,
+    )
+
+    this.element.addEventListener(
+      "removeItem",
+      function(event) {
+        var stationName = event.detail.label;
+        mapManager.removeMarker(stationName);
+      },
+      false,
+    )
   }
 }
