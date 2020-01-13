@@ -22,13 +22,12 @@ main, footer {
 
 footer {
   color: white;
-  font-size: 0.85em;
-  padding-top: 1em;
+  font-size: 0.9em;
+  padding-top:    1em;
   padding-bottom: 1em;
 }
 
 a {
-  color: $color;
   text-decoration: underline;
 }
 a:hover {
@@ -39,4 +38,13 @@ h1 {
   font-weight: bold;
   color: white;
   font-size: 2em;
+}
+
+#glitch_button:hover {
+  background: none;
+}
+
+#glitch_button:hover img {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
 }
