@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="static/base.css"/>
+    <link rel="stylesheet" href="static/choices.css"/>
+    <link rel="stylesheet" href="static/leaflet.css"/>
+    <link rel="stylesheet" href="static/style.css"/>
+
+    <script src="static/choices.min.js"></script>
+    <script src="static/leaflet.js"></script>
+    <script src="static/managers.js"></script>
+    <script src="static/stations.js"></script>
+
+    <title>uk stations map 🚂</title>
+
+     <label for="station-picker">
+        <p>This is an map I created to see which train stations I&rsquo;ve visited.</p>
+        How many have <em>you</em> been to?
+      </label>
+      <select
+        class="form-control"
+        name="station-picker"
+        id="station-picker"
+        placeholder="Start typing the name of a station"
+        multiple
+      ></select>
+
+      <div id="mapid" style="z-index: 0;"></div>
+
+      <script>
+        const mapManager = new MapManager("mapid");
+
+        const pickerManager = new PickerManager("station-picker", mapManager, stations);
+      </script>
+
+      <script>
+        function createDownloadLink() {
+          leafletImage(mapManager.map, function(err, canvas) {
+            if (err !== null) {
+              console.log(err)
+              alert("Something went wrong downloading your image 😭");
+            }
+
+            var element = document.createElement("a");
+            element.setAttribute("href", canvas.toDataURL());
+            element.setAttribute("download", "ukstations.png");
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+          })
+        }
+      </script>
+    </main>
+
+    <footer>
+      created with 💖 by <a href="https://twitter.com/alexwlchan">lexie</a>, who thinks trains are pretty cool
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+label {
+  color: white;
+  font-size: 24px;
+}
+
+#mapid {
+  width:  100%;
+  padding-top: 75%;  /* 4:3 aspect ratio */
+  border: 1px solid black;
+}
+
+body {
+  color: white;
+  padding: 1em 2em;
+}
+
+main, footer {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  color: white;
+  font-size: 0.85em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+a {
+  color: $color;
+  text-decoration: underline;
+}
+a:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  font-weight: bold;
+  color: white;
+  font-size: 2em;
+}
