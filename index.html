@@ -44,7 +44,9 @@
       <script>
         const mapManager = new MapManager("mapid");
 
-        const pickerManager = new PickerManager("station-picker", mapManager, stations);
+        const permalinkManager = new PermalinkManager(stations);
+
+        const pickerManager = new PickerManager("station-picker", mapManager, permalinkManager, stations);
       </script>
     </main>
     <footer>

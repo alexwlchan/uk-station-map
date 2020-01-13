@@ -80,15 +80,32 @@ class MapManager {
   }
 }
 
-class PickerManager {
-  constructor(pickerId, mapManager, stations) {
-    this.element = document.getElementById(pickerId);
-
-    this.createChoices();
-    this.setupEventListeners(mapManager, stations);
+class PermalinkManager {
+  constructor(stations) {
+    this.stations = stations;
+    this.selected = [];
   }
 
-  createChoices() {
+  addStation(stationName) {
+    this.selected.push(stationName);
+    window.localStorage.setItem("stations", this.selected.join(";"));
+  }
+
+  removeStation(stationName) {
+    this.selected = this.selected.filter(station => station !== stationName);
+    window.localStorage.setItem("stations", this.selected.join(";"));
+  }
+}
+
+class PickerManager {
+  constructor(pickerId, mapManager, permalinkManager, stations) {
+    this.element = document.getElementById(pickerId);
+
+    this.createChoices(permalinkManager);
+    this.setupEventListeners(mapManager, permalinkManager, stations);
+  }
+
+  createChoices(permalinkManager) {
     const choices = [];
     for (var name in stations) {
       var data = stations[name];
@@ -100,35 +117,59 @@ class PickerManager {
       choices: choices,
     });
 
-    // Pick a random selection of stations to illustrate the principle.
-    // Choose an integer between 3 and 7, then add those stations.
-    const randomCount = Math.floor((Math.random() * 5) + 3);
-
     const items = [];
-    for (var i = 0; i < randomCount; i++) {
-      var chosenStation = choices[Math.floor(Math.random() * choices.length)];
 
-      var stationName = chosenStation.label;
-      var stationCoords = stations[stationName];
-      var longitude = stationCoords[0];
-      var latitude = stationCoords[1];
-      mapManager.addMarker(stationName, longitude, latitude);
+    if (window.localStorage.getItem("hasEdits") === null ||
+        window.localStorage.getItem("stations") === null ||
+        window.localStorage.getItem("stations") === "") {
+      // If this is a first run, pick a random selection of stations
+      // to illustrate the principle.  Choose an integer between 3 and 7,
+      // then add those stations.
+      //
+      // If the user has ever edited the set of available stations, don't.
+      const randomCount = Math.floor((Math.random() * 5) + 3);
 
-      items.push(chosenStation.value);
+      for (var i = 0; i < randomCount; i++) {
+        var chosenStation = choices[Math.floor(Math.random() * choices.length)];
+
+        var stationName = chosenStation.label;
+        var stationCoords = stations[stationName];
+        var longitude = stationCoords[0];
+        var latitude = stationCoords[1];
+        mapManager.addMarker(stationName, longitude, latitude);
+        permalinkManager.addStation(stationName);
+
+        items.push(chosenStation.value);
+      }
+    } else {
+      const savedNames = window.localStorage.getItem("stations").split(";");
+      for (var i = 0; i < savedNames.length; i++) {
+        var stationName = savedNames[i]
+        var stationCoords = stations[stationName];
+        var longitude = stationCoords[0];
+        var latitude = stationCoords[1];
+        mapManager.addMarker(stationName, longitude, latitude);
+        permalinkManager.addStation(stationName);
+
+        items.push(stationName);
+      }
     }
 
     picker.setValue(items);
   }
 
-  setupEventListeners(mapManager, stations) {
+  setupEventListeners(mapManager, permalinkManager, stations) {
     this.element.addEventListener(
       "addItem",
       function(event) {
+        window.localStorage.setItem("hasEdits", true);
+
         var stationName = event.detail.label;
         var stationCoords = stations[stationName];
         var longitude = stationCoords[0];
         var latitude = stationCoords[1];
         mapManager.addMarker(stationName, longitude, latitude);
+        permalinkManager.addStation(stationName);
       },
       false,
     )
@@ -136,8 +177,11 @@ class PickerManager {
     this.element.addEventListener(
       "removeItem",
       function(event) {
+        window.localStorage.setItem("hasEdits", true);
+
         var stationName = event.detail.label;
         mapManager.removeMarker(stationName);
+        permalinkManager.removeStation(stationName);
       },
       false,
     )
