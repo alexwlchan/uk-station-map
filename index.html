@@ -31,15 +31,18 @@
         <p>This is an map I created to see which train stations I&rsquo;ve visited.</p>
         How many have <em>you</em> been to?
       </label>
-      <select
-        class="form-control"
-        name="station-picker"
-        id="station-picker"
-        placeholder="Start typing the name of a station"
-        multiple
-      ></select>
 
       <div id="mapid" style="z-index: 0;"></div>
+
+      <div id="picker">
+        <select
+          class="form-control"
+          name="station-picker"
+          id="station-picker"
+          placeholder="Start typing the name of a station"
+          multiple
+        ></select>
+      </div>
 
       <script>
         const mapManager = new MapManager("mapid");

@@ -1,6 +1,7 @@
 label {
   color: white;
-  font-size: 24px;
+  font-size: 28px;
+  margin-bottom: 0.5em;
 }
 
 #mapid {
@@ -46,4 +47,8 @@ h1 {
 #glitch_button:hover img {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 5px;
+}
+
+#picker {
+  margin-top: 1em;
 }
