@@ -52,3 +52,9 @@ h1 {
 #picker {
   margin-top: 1em;
 }
+
+#counter {
+  margin-top: 1em;
+  color: white;
+  font-size: 18px;
+}

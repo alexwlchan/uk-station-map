@@ -98,14 +98,28 @@ class StateManager {
     this.selected = [];
   }
 
+  updateCounter() {
+    if (this.selected.length === 1) {
+      var text = "You&rsquo;ve visited <strong>1</strong> station!";
+    } else if (this.selected.length === 0) {
+      var text = "You haven&rsquo;t visited any stations yet!";
+    } else {
+      var text = "You&rsquo;ve visited <strong>" + this.selected.length + "</strong> stations!";
+    }
+
+    document.getElementById("counter").innerHTML = text;
+  }
+
   addStation(stationName) {
     this.selected.push(stationName);
     window.localStorage.setItem("stations", this.selected.join(";"));
+    this.updateCounter();
   }
 
   removeStation(stationName) {
     this.selected = this.selected.filter(station => station !== stationName);
     window.localStorage.setItem("stations", this.selected.join(";"));
+    this.updateCounter();
   }
 }
 
