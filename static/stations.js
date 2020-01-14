@@ -327,10 +327,6 @@ const stations = {
     "-4.721712",
     "56.302025"
   ],
-  "Ardrossan": [
-    "-4.8097",
-    "55.6432"
-  ],
   "Ardrossan Harbour": [
     "-4.823461",
     "55.640854"
@@ -410,10 +406,6 @@ const stations = {
   "Ashfield": [
     "-4.2433",
     "55.889214"
-  ],
-  "Ashford": [
-    "",
-    ""
   ],
   "Ashford International": [
     "0.873628",
@@ -827,10 +819,6 @@ const stations = {
     "-0.027144",
     "51.411446"
   ],
-  "Bedford": [
-    "-0.460739",
-    "52.136436"
-  ],
   "Bedford St Johns": [
     "-0.467348",
     "52.129299"
@@ -1011,10 +999,6 @@ const stations = {
     "0.133471",
     "51.463493"
   ],
-  "Bicester": [
-    "-1.1535700",
-    "51.8999800"
-  ],
   "Bicester North": [
     "-1.150517",
     "51.903401"
@@ -1095,10 +1079,6 @@ const stations = {
     "-3.03927",
     "53.397417"
   ],
-  "Birmingham": [
-    "-1.893611",
-    "52.483056"
-  ],
   "Birmingham International": [
     "-1.725149",
     "52.450673"
@@ -1154,10 +1134,6 @@ const stations = {
   "Blackhorse Road": [
     "-0.04123",
     "51.586143"
-  ],
-  "Blackpool": [
-    "-3.05028",
-    "53.81417"
   ],
   "Blackpool North": [
     "-3.049908",
@@ -1263,10 +1239,6 @@ const stations = {
     "-0.385224",
     "51.288334"
   ],
-  "Bootle": [
-    "-2.9891",
-    "53.4457"
-  ],
   "Bootle (Cumbria)": [
     "-3.394818",
     "54.290249"
@@ -1346,10 +1318,6 @@ const stations = {
   "Bracknell": [
     "-0.751833",
     "51.413319"
-  ],
-  "Bradford": [
-    "-1.75206",
-    "53.8000"
   ],
   "Bradford Forster Square": [
     "-1.752505",
@@ -1478,10 +1446,6 @@ const stations = {
   "Brinnington": [
     "-2.134097",
     "53.431881"
-  ],
-  "Bristol": [
-    "",
-    ""
   ],
   "Bristol Parkway": [
     "-2.53461",
@@ -1695,10 +1659,6 @@ const stations = {
     "0.813459",
     "51.633526"
   ],
-  "Burnley": [
-    "-2.248",
-    "53.789"
-  ],
   "Burnley Barracks": [
     "-2.258014",
     "53.791237"
@@ -1863,10 +1823,6 @@ const stations = {
     "-0.091614",
     "51.548747"
   ],
-  "Canterbury": [
-    "1.087",
-    "51.275"
-  ],
   "Canterbury East": [
     "1.075434",
     "51.275261"
@@ -1890,10 +1846,6 @@ const stations = {
   "Cardenden": [
     "-3.261651",
     "56.141308"
-  ],
-  "Cardiff": [
-    "",
-    ""
   ],
   "Cardiff Bay": [
     "-3.166049",
@@ -2018,10 +1970,6 @@ const stations = {
   "Caterham": [
     "-0.078539",
     "51.282803"
-  ],
-  "Catford": [
-    "-0.0207",
-    "51.4452"
   ],
   "Catford Bridge": [
     "-0.027142",
@@ -2391,10 +2339,6 @@ const stations = {
     "-3.189974",
     "51.445396"
   ],
-  "Colchester": [
-    "0.903",
-    "51.8917"
-  ],
   "Colchester Station": [
     "0.894085",
     "51.900478"
@@ -2699,10 +2643,6 @@ const stations = {
     "-4.035697",
     "55.955734"
   ],
-  "Croydon": [
-    "-0.1099",
-    "51.3727"
-  ],
   "Crumpsall Metrolink": [
     "-2.24277",
     "53.51713"
@@ -2951,9 +2891,9 @@ const stations = {
     "54.541594",
     "-6.018338"
   ],
-  "Devils bridge": [
-    "",
-    ""
+  "Devil's Bridge": [
+    "52.376051",
+    "-3.854077"
   ],
   "Devonport": [
     "-4.171534",
@@ -3043,10 +2983,6 @@ const stations = {
     "-1.140225",
     "53.521469"
   ],
-  "Dorchester": [
-    "-2.4367",
-    "50.7154"
-  ],
   "Dorchester South": [
     "-2.437593",
     "50.708752"
@@ -3058,10 +2994,6 @@ const stations = {
   "Dore & Totley": [
     "-1.514997",
     "53.327625"
-  ],
-  "Dorking": [
-    "-0.3338",
-    "51.23228"
   ],
   "Dorking Deepdene": [
     "-0.323921",
@@ -3087,25 +3019,9 @@ const stations = {
     "-1.890678",
     "53.300005"
   ],
-  "Dover": [
-    "1.315",
-    "51.128079"
-  ],
   "Dover Priory": [
     "1.304227",
     "51.125988"
-  ],
-  "Dover eastern docks": [
-    "",
-    ""
-  ],
-  "Dover hoverport": [
-    "",
-    ""
-  ],
-  "Dover western docks": [
-    "",
-    ""
   ],
   "Dovercourt": [
     "1.280724",
@@ -3175,10 +3091,6 @@ const stations = {
     "-1.871842",
     "52.488018"
   ],
-  "Dudley": [
-    "-2.089",
-    "52.508"
-  ],
   "Dudley Port": [
     "-2.049401",
     "52.524517"
@@ -3198,14 +3110,6 @@ const stations = {
   "Dullingham": [
     "0.366197",
     "52.200943"
-  ],
-  "Dulwich": [
-    "-0.0779",
-    "51.4457"
-  ],
-  "Dumbarton": [
-    "-4.566667",
-    "55.95"
   ],
   "Dumbarton Central": [
     "-4.56697",
@@ -3302,10 +3206,6 @@ const stations = {
   "Eaglescliffe": [
     "-1.349426",
     "54.529449"
-  ],
-  "Ealing": [
-    "-0.2988",
-    "51.5175"
   ],
   "Ealing Broadway": [
     "-0.300843",
@@ -3459,10 +3359,6 @@ const stations = {
     "-0.026587",
     "51.390762"
   ],
-  "Edenbridge": [
-    "0.065",
-    "51.197"
-  ],
   "Edenbridge Station": [
     "0.060099",
     "51.208508"
@@ -3567,10 +3463,6 @@ const stations = {
     "-3.2287",
     "51.5838"
   ],
-  "Enfield": [
-    "-0.060",
-    "51.645"
-  ],
   "Enfield Chase": [
     "-0.090404",
     "51.652607"
@@ -3586,10 +3478,6 @@ const stations = {
   "Entwistle": [
     "-2.413983",
     "53.655591"
-  ],
-  "Epsom": [
-    "-0.267",
-    "51.336"
   ],
   "Epsom Downs": [
     "-0.243411",
@@ -3635,10 +3523,6 @@ const stations = {
     "-1.947413",
     "52.098793"
   ],
-  "Ewell": [
-    "-0.249",
-    "51.350"
-  ],
   "Ewell East": [
     "-0.24106",
     "51.345612"
@@ -3650,10 +3534,6 @@ const stations = {
   "Exchange Quay Metrolink": [
     "-2.28315",
     "53.4667"
-  ],
-  "Exeter": [
-    "-3.516667",
-    "50.716667"
   ],
   "Exeter Central": [
     "-3.532973",
@@ -3707,10 +3587,6 @@ const stations = {
     "0.078571",
     "51.459087"
   ],
-  "Falkirk": [
-    "-3.7835",
-    "56.0011"
-  ],
   "Falkirk Grahamston": [
     "-3.786359",
     "56.002735"
@@ -3727,10 +3603,6 @@ const stations = {
     "-0.087364",
     "50.862064"
   ],
-  "Falmouth": [
-    "-5.07",
-    "50.15"
-  ],
   "Falmouth Docks": [
     "-5.0559",
     "50.15075"
@@ -3742,10 +3614,6 @@ const stations = {
   "Fareham": [
     "-1.19162",
     "50.853352"
-  ],
-  "Farnborough": [
-    "-0.75",
-    "51.29"
   ],
   "Farnborough Main": [
     "-0.756436",
@@ -3879,10 +3747,6 @@ const stations = {
     "-4.985713",
     "52.011505"
   ],
-  "Fishguard harbour": [
-    "",
-    ""
-  ],
   "Fiskerton": [
     "-0.912181",
     "53.060253"
@@ -3918,10 +3782,6 @@ const stations = {
   "Flowery Field": [
     "-2.080965",
     "53.461737"
-  ],
-  "Folkestone": [
-    "1.166",
-    "51.081"
   ],
   "Folkestone Central": [
     "1.168331",
@@ -4027,10 +3887,6 @@ const stations = {
     "-0.728467",
     "51.533082"
   ],
-  "Gainsborough": [
-    "-0.7732",
-    "53.4016"
-  ],
   "Gainsborough Central": [
     "-0.769674",
     "53.399574"
@@ -4099,21 +3955,9 @@ const stations = {
     "-2.230052",
     "53.394001"
   ],
-  "Gatwick": [
-    "",
-    ""
-  ],
   "Gatwick Airport": [
-    "",
-    ""
-  ],
-  "Gatwick\u2014Airport": [
-    "",
-    ""
-  ],
-  "Gde bretagne": [
-    "",
-    ""
+    "51.1565",
+    "-0.1609"
   ],
   "Georgemas Junction": [
     "-3.45212",
@@ -4170,10 +4014,6 @@ const stations = {
   "Glan Conwy": [
     "-3.796892",
     "53.266644"
-  ],
-  "Glasgow": [
-    "-4.259",
-    "55.858"
   ],
   "Glasgow Airport": [
     "-4.432114",
@@ -4423,10 +4263,6 @@ const stations = {
     "-3.064608",
     "55.001934"
   ],
-  "Grimsby": [
-    "-0.0680",
-    "53.5595"
-  ],
   "Grimsby Docks": [
     "-0.075873",
     "53.574699"
@@ -4450,10 +4286,6 @@ const stations = {
   "Guide Bridge": [
     "-2.112961",
     "53.474171"
-  ],
-  "Guildford": [
-    "-0.5703",
-    "51.2365"
   ],
   "Guildford Station": [
     "-0.580409",
@@ -4595,10 +4427,6 @@ const stations = {
     "0.278906",
     "50.796124"
   ],
-  "Hampstead": [
-    "-0.1744",
-    "51.5541"
-  ],
   "Hampstead Heath": [
     "-0.165159",
     "51.555779"
@@ -4723,10 +4551,6 @@ const stations = {
     "-3.839792",
     "55.810532"
   ],
-  "Harwich": [
-    "1.289852",
-    "51.944580"
-  ],
   "Harwich International": [
     "1.255167",
     "51.947701"
@@ -4786,10 +4610,6 @@ const stations = {
   "Haverfordwest": [
     "-4.960279",
     "51.802601"
-  ],
-  "Hawarden": [
-    "-3.02",
-    "53.182"
   ],
   "Hawarden Bridge": [
     "-3.031866",
@@ -4870,30 +4690,6 @@ const stations = {
   "Heathrow Airport": [
     "-0.46134",
     "51.478443"
-  ],
-  "Heathrow Terminal 4 Bus": [
-    "-0.44662",
-    "51.459275"
-  ],
-  "Heathrow Terminal 4 Rail": [
-    "-0.445447",
-    "51.458214"
-  ],
-  "Heathrow Terminal 5 Bus": [
-    "-0.48",
-    "51.47"
-  ],
-  "Heathrow Terminal 5 Rail": [
-    "-0.48",
-    "51.47"
-  ],
-  "Heathrow Terminals 1-2-3 Bus": [
-    "-0.456",
-    "51.471"
-  ],
-  "Heathrow Terminals 1-2-3 Rail": [
-    "-0.456",
-    "51.471"
   ],
   "Heaton Chapel": [
     "-2.179046",
@@ -4986,10 +4782,6 @@ const stations = {
   "Hersham": [
     "-0.389271",
     "51.377419"
-  ],
-  "Hertford": [
-    "-0.078",
-    "51.795"
   ],
   "Hertford East": [
     "-0.072591",
@@ -5272,8 +5064,8 @@ const stations = {
     "53.648407"
   ],
   "Hull": [
-    "",
-    ""
+    "-0.345645",
+    "53.744144"
   ],
   "Humphrey Park": [
     "-2.327363",
@@ -5439,10 +5231,6 @@ const stations = {
     "-2.991993",
     "53.404748"
   ],
-  "Jersey": [
-    "",
-    ""
-  ],
   "Jewellery Quarter": [
     "-1.913522",
     "52.489514"
@@ -5539,10 +5327,6 @@ const stations = {
     "-0.045786",
     "51.412659"
   ],
-  "Kentish Town": [
-    "-0.1459",
-    "51.5447"
-  ],
   "Kentish Town Station": [
     "-0.140446",
     "51.550338"
@@ -5550,10 +5334,6 @@ const stations = {
   "Kentish Town West": [
     "-0.146778",
     "51.546501"
-  ],
-  "Kenton": [
-    "-0.3032",
-    "51.5830"
   ],
   "Kenton Station": [
     "-0.317123",
@@ -5899,10 +5679,6 @@ const stations = {
     "-3.974445",
     "55.739258"
   ],
-  "Larne": [
-    "",
-    ""
-  ],
   "Larne Harbour": [
     "54.5053",
     "-5.4755"
@@ -5987,10 +5763,6 @@ const stations = {
     "-0.676874",
     "51.916046"
   ],
-  "Lelant": [
-    "-5.440",
-    "50.184"
-  ],
   "Lelant Saltings": [
     "-5.441468",
     "50.17923"
@@ -6035,10 +5807,6 @@ const stations = {
     "-2.687101",
     "53.69886"
   ],
-  "Leyton": [
-    "-0.015465",
-    "51.560558"
-  ],
   "Leyton Midland Road": [
     "-0.007313",
     "51.569393"
@@ -6046,10 +5814,6 @@ const stations = {
   "Leytonstone High Road": [
     "0.008304",
     "51.563725"
-  ],
-  "Lichfield": [
-    "-1.82653",
-    "52.6835"
   ],
   "Lichfield City": [
     "-1.825431",
@@ -6070,10 +5834,6 @@ const stations = {
   "Lincoln Central": [
     "-0.540922",
     "53.227089"
-  ],
-  "Lincoln-St-Marks": [
-    "",
-    ""
   ],
   "Lingfield": [
     "-0.007151",
@@ -6131,10 +5891,6 @@ const stations = {
     "0.316905",
     "52.462696"
   ],
-  "Liverpool": [
-    "-2.983",
-    "53.400"
-  ],
   "Liverpool Central": [
     "-2.977841",
     "53.40525"
@@ -6146,10 +5902,6 @@ const stations = {
   "Liverpool South Parkway": [
     "-2.8897",
     "53.3577"
-  ],
-  "Livingston": [
-    "-3.5157",
-    "55.8834"
   ],
   "Livingston North": [
     "-3.543357",
@@ -6315,10 +6067,6 @@ const stations = {
     "-1.800335",
     "53.635849"
   ],
-  "London": [
-    "",
-    ""
-  ],
   "London Blackfriars": [
     "-0.103554",
     "51.510735"
@@ -6334,10 +6082,6 @@ const stations = {
   "London Charing Cross": [
     "-0.123835",
     "51.508362"
-  ],
-  "London City Airport": [
-    "",
-    ""
   ],
   "London Euston": [
     "-0.134545",
@@ -6375,10 +6119,6 @@ const stations = {
     "-0.56506",
     "51.24067"
   ],
-  "London Southern Railway": [
-    "",
-    ""
-  ],
   "London St-Pancras": [
     "-0.126747",
     "51.531831"
@@ -6386,10 +6126,6 @@ const stations = {
   "London Victoria": [
     "-0.1448",
     "51.4966"
-  ],
-  "London Victoria Coach Station": [
-    "-0.148278",
-    "51.492491"
   ],
   "London Waterloo": [
     "-0.111126",
@@ -6515,10 +6251,6 @@ const stations = {
     "-2.116233",
     "52.459267"
   ],
-  "Lymington": [
-    "-1.55",
-    "50.75"
-  ],
   "Lymington Pier": [
     "-1.529275",
     "50.758083"
@@ -6526,10 +6258,6 @@ const stations = {
   "Lymington Town": [
     "-1.537753",
     "50.760818"
-  ],
-  "Lympstone": [
-    "-3.4298",
-    "50.6460"
   ],
   "Lympstone Commando": [
     "-3.438876",
@@ -6550,10 +6278,6 @@ const stations = {
   "Machynlleth": [
     "-3.854311",
     "52.595844"
-  ],
-  "Maesteg": [
-    "-3.65",
-    "51.61"
   ],
   "Maesteg (Ewenny Road)": [
     "-3.649038",
@@ -6579,10 +6303,6 @@ const stations = {
     "-0.722464",
     "51.518601"
   ],
-  "Maidstone": [
-    "0.529",
-    "51.272"
-  ],
   "Maidstone Barracks": [
     "0.514148",
     "51.277288"
@@ -6603,25 +6323,13 @@ const stations = {
     "-5.8306",
     "57.005497"
   ],
-  "Malling": [
-    "0.41521",
-    "51.29170"
-  ],
   "Malton": [
     "-0.798593",
     "54.13155"
   ],
-  "Malvern": [
-    "-2.325",
-    "52.118"
-  ],
   "Malvern Link": [
     "-2.31987",
     "52.12534"
-  ],
-  "Manchester": [
-    "-2.25",
-    "53.483333"
   ],
   "Manchester Airport": [
     "-2.268941",
@@ -6666,10 +6374,6 @@ const stations = {
   "Manors": [
     "-1.606296",
     "54.972698"
-  ],
-  "Mansfield": [
-    "-1.1963",
-    "53.1435"
   ],
   "Mansfield Station": [
     "-1.198192",
@@ -6754,10 +6458,6 @@ const stations = {
   "Maryport": [
     "-3.494738",
     "54.711597"
-  ],
-  "Matlock": [
-    "-1.55",
-    "53.14"
   ],
   "Matlock Bath": [
     "-1.55766",
@@ -6922,10 +6622,6 @@ const stations = {
   "Milnrow Metrolink": [
     "-2.111803",
     "53.608105"
-  ],
-  "Milton Keynes": [
-    "-0.7594171",
-    "52.0406224"
   ],
   "Milton Keynes Central": [
     "-0.77341",
@@ -7203,10 +6899,6 @@ const stations = {
     "-0.060771",
     "53.574455"
   ],
-  "New Cross": [
-    "-0.0337",
-    "51.4709"
-  ],
   "New Cross Gate": [
     "-0.041655",
     "51.475544"
@@ -7239,10 +6931,6 @@ const stations = {
     "-0.256084",
     "51.403393"
   ],
-  "New Mills": [
-    "-2.007",
-    "53.367"
-  ],
   "New Mills Central": [
     "-2.007485",
     "53.364567"
@@ -7263,10 +6951,6 @@ const stations = {
     "-0.142586",
     "51.613876"
   ],
-  "Newark": [
-    "-0.8100",
-    "53.0765"
-  ],
   "Newark Castle": [
     "-0.813151",
     "53.079987"
@@ -7278,10 +6962,6 @@ const stations = {
   "Newbridge": [
     "-3.142116",
     "51.665686"
-  ],
-  "Newbury": [
-    "-1.323",
-    "51.401"
   ],
   "Newbury Park": [
     "0.08971",
@@ -7314,10 +6994,6 @@ const stations = {
   "Newcraighall": [
     "-3.091582",
     "55.932619"
-  ],
-  "Newhaven": [
-    "0.06",
-    "50.8"
   ],
   "Newhaven Harbour": [
     "0.054433",
@@ -7499,10 +7175,6 @@ const stations = {
     "1.306879",
     "52.627121"
   ],
-  "Norwood": [
-    "-0.0747",
-    "51.3995"
-  ],
   "Norwood Junction": [
     "-0.075201",
     "51.396965"
@@ -7615,10 +7287,6 @@ const stations = {
     "0.196757",
     "51.312141"
   ],
-  "Oulton Broad": [
-    "1.75",
-    "52.48"
-  ],
   "Oulton Broad North": [
     "1.716998",
     "52.478226"
@@ -7670,10 +7338,6 @@ const stations = {
   "Paignton": [
     "-3.564361",
     "50.434658"
-  ],
-  "Paisley": [
-    "-4.423636",
-    "55.846627"
   ],
   "Paisley Canal": [
     "-4.422606",
@@ -7747,10 +7411,6 @@ const stations = {
     "-1.473198",
     "52.89684"
   ],
-  "Peckham": [
-    "-0.0625",
-    "51.4714"
-  ],
   "Peckham Rye": [
     "-0.067782",
     "51.470585"
@@ -7766,10 +7426,6 @@ const stations = {
   "Pembrey & Burry Port": [
     "-4.247899",
     "51.683487"
-  ],
-  "Pembroke": [
-    "-4.9158",
-    "51.67604"
   ],
   "Pembroke Dock": [
     "-4.93729",
@@ -7798,10 +7454,6 @@ const stations = {
   "Pengam": [
     "-3.230578",
     "51.670681"
-  ],
-  "Penge": [
-    "-0.0648",
-    "51.4174"
   ],
   "Penge East": [
     "-0.055566",
@@ -7899,10 +7551,6 @@ const stations = {
     "0.075393",
     "51.388996"
   ],
-  "Pevensey": [
-    "0.3383",
-    "50.8203"
-  ],
   "Pevensey & Westham": [
     "0.325291",
     "50.815899"
@@ -7975,10 +7623,6 @@ const stations = {
     "-1.60995",
     "52.625893"
   ],
-  "Pollokshaws": [
-    "-4.29",
-    "55.821833"
-  ],
   "Pollokshaws East": [
     "-4.287476",
     "55.824589"
@@ -7986,10 +7630,6 @@ const stations = {
   "Pollokshaws West": [
     "-4.301826",
     "55.824318"
-  ],
-  "Pollokshields": [
-    "-4.3262",
-    "55.8406"
   ],
   "Pollokshields East": [
     "-4.269287",
@@ -8022,10 +7662,6 @@ const stations = {
   "Pontarddulais": [
     "-4.045417",
     "51.716866"
-  ],
-  "Pontefract": [
-    "-1.312",
-    "53.691"
   ],
   "Pontefract Baghill": [
     "-1.303355",
@@ -8103,10 +7739,6 @@ const stations = {
     "-0.204898",
     "50.836044"
   ],
-  "Portsmouth": [
-    "-1.083333",
-    "50.816667"
-  ],
   "Portsmouth & Southsea": [
     "-1.090417",
     "50.797756"
@@ -8170,10 +7802,6 @@ const stations = {
   "Prestwich Metrolink": [
     "-2.28209",
     "53.53322"
-  ],
-  "Prestwick": [
-    "-4.61416",
-    "55.495551"
   ],
   "Prestwick International Airport": [
     "-4.616166",
@@ -8339,10 +7967,6 @@ const stations = {
     "-0.22998",
     "51.409294"
   ],
-  "Reading": [
-    "-0.973056",
-    "51.454167"
-  ],
   "Reading Station": [
     "-0.972172",
     "51.458767"
@@ -8359,10 +7983,6 @@ const stations = {
     "-1.470737",
     "50.919697"
   ],
-  "Redcar": [
-    "-1.06856",
-    "54.61856"
-  ],
   "Redcar Central": [
     "-1.069318",
     "54.615692"
@@ -8370,10 +7990,6 @@ const stations = {
   "Redcar East": [
     "-1.05088",
     "54.609257"
-  ],
-  "Reddish": [
-    "-2.1613",
-    "53.4383"
   ],
   "Reddish North": [
     "-2.15656",
@@ -8591,10 +8207,6 @@ const stations = {
     "-1.249263",
     "52.378719"
   ],
-  "Rugeley": [
-    "-1.916",
-    "52.756"
-  ],
   "Rugeley Town": [
     "-1.936963",
     "52.754672"
@@ -8602,10 +8214,6 @@ const stations = {
   "Rugeley Trent Valley": [
     "-1.930309",
     "52.769451"
-  ],
-  "Ruislip": [
-    "-0.433",
-    "51.576"
   ],
   "Runcorn": [
     "-2.73919",
@@ -8626,10 +8234,6 @@ const stations = {
   "Rutherglen": [
     "-4.212766",
     "55.830448"
-  ],
-  "Ryde": [
-    "-1.1618",
-    "50.7271"
   ],
   "Ryde Esplanade": [
     "-1.159676",
@@ -8658,10 +8262,6 @@ const stations = {
   "Sale Metrolink": [
     "-2.31899",
     "53.42437"
-  ],
-  "Salford": [
-    "-2.33444",
-    "53.50972"
   ],
   "Salford Central": [
     "-2.254686",
@@ -9139,10 +8739,6 @@ const stations = {
     "-1.15721",
     "50.712822"
   ],
-  "Smethwick": [
-    "-1.968226",
-    "52.49285"
-  ],
   "Smethwick Galton Bridge Low Level": [
     "-1.980632",
     "52.501826"
@@ -9243,10 +8839,6 @@ const stations = {
     "-0.378513",
     "51.505884"
   ],
-  "Southampton": [
-    "-1.4",
-    "50.9"
-  ],
   "Southampton Airport Parkway": [
     "-1.36362",
     "50.950638"
@@ -9274,10 +8866,6 @@ const stations = {
   "Southease Church (By Bus)": [
     "0.0306",
     "50.8307"
-  ],
-  "Southend": [
-    "0.71377",
-    "51.53789"
   ],
   "Southend Airport": [
     "0.704084",
@@ -9371,10 +8959,6 @@ const stations = {
     "-3.591263",
     "54.492465"
   ],
-  "St Budeaux": [
-    "-4.185556",
-    "50.403333"
-  ],
   "St Budeaux Ferry Road": [
     "-4.186661",
     "50.401241"
@@ -9398,10 +8982,6 @@ const stations = {
   "St Germans": [
     "-4.308757",
     "50.394386"
-  ],
-  "St Helens": [
-    "-2.7461",
-    "53.4541"
   ],
   "St Helens Central": [
     "-2.730328",
@@ -9434,10 +9014,6 @@ const stations = {
   "St Keyne": [
     "-4.462204",
     "50.422714"
-  ],
-  "St Leonards": [
-    "0.54165",
-    "50.85282"
   ],
   "St Leonards Warrior Square": [
     "0.560326",
@@ -9619,10 +9195,6 @@ const stations = {
     "-0.247546",
     "51.363701"
   ],
-  "Stourbridge": [
-    "-2.1479",
-    "52.4575"
-  ],
   "Stourbridge Junction": [
     "-2.133857",
     "52.447563"
@@ -9666,10 +9238,6 @@ const stations = {
   "Strawberry Hill": [
     "-0.339597",
     "51.439682"
-  ],
-  "Streatham": [
-    "-0.1235",
-    "51.4279"
   ],
   "Streatham Common": [
     "-0.136136",
@@ -9718,10 +9286,6 @@ const stations = {
   "Sudbury & Harrow Road": [
     "-0.316676",
     "51.554459"
-  ],
-  "Sudbury Harrow": [
-    "-0.3199",
-    "51.5537"
   ],
   "Sudbury Hill Harrow": [
     "-0.336092",
@@ -9975,10 +9539,6 @@ const stations = {
     "-1.301006",
     "54.559734"
   ],
-  "Thorne": [
-    "-0.9583",
-    "53.6083"
-  ],
   "Thorne North": [
     "-0.972006",
     "53.616329"
@@ -10042,10 +9602,6 @@ const stations = {
   "Thurston": [
     "0.808347",
     "52.249699"
-  ],
-  "Tilbury": [
-    "0.3582",
-    "51.4606"
   ],
   "Tilbury Riverside": [
     "0.36467",
@@ -10147,10 +9703,6 @@ const stations = {
     "-2.310836",
     "53.454899"
   ],
-  "Trefforest": [
-    "-3.3221",
-    "51.5878"
-  ],
   "Trefforest Estate": [
     "-3.2913",
     "51.568417"
@@ -10242,10 +9794,6 @@ const stations = {
   "Tygwyn": [
     "-4.079579",
     "52.893307"
-  ],
-  "Tyndrum": [
-    "-4.71009",
-    "56.43524"
   ],
   "Tyndrum Lower": [
     "-4.714873",
@@ -10359,10 +9907,6 @@ const stations = {
     "0.234774",
     "53.105373"
   ],
-  "Wakefield": [
-    "-1.4920",
-    "53.6801"
-  ],
   "Wakefield Kirkgate": [
     "-1.488254",
     "53.67897"
@@ -10374,10 +9918,6 @@ const stations = {
   "Walkden": [
     "-2.395128",
     "53.520313"
-  ],
-  "Wallasey": [
-    "-3.065",
-    "53.423"
   ],
   "Wallasey Grove Road": [
     "-3.06982",
@@ -10411,10 +9951,6 @@ const stations = {
     "-0.026846",
     "51.684834"
   ],
-  "Walthamstow": [
-    "-0.0211",
-    "51.584"
-  ],
   "Walthamstow Central": [
     "-0.019715",
     "51.583092"
@@ -10422,10 +9958,6 @@ const stations = {
   "Walthamstow Queens Road": [
     "-0.024113",
     "51.581367"
-  ],
-  "Walton": [
-    "-2.955",
-    "53.443"
   ],
   "Walton (Merseyside)": [
     "-2.965794",
@@ -10442,10 +9974,6 @@ const stations = {
   "Wanborough": [
     "-0.66756",
     "51.245129"
-  ],
-  "Wandsworth": [
-    "-0.1924",
-    "51.4644"
   ],
   "Wandsworth Common": [
     "-0.165239",
@@ -10491,10 +10019,6 @@ const stations = {
     "-0.329193",
     "51.0933"
   ],
-  "Warrington": [
-    "-2.59722",
-    "53.391667"
-  ],
   "Warrington Bank Quay": [
     "-2.602871",
     "53.385509"
@@ -10526,10 +10050,6 @@ const stations = {
   "Waterloo (Merseyside)": [
     "-3.025532",
     "53.474968"
-  ],
-  "Watford": [
-    "-0.395694",
-    "51.65500"
   ],
   "Watford High Street": [
     "-0.391656",
@@ -10603,10 +10123,6 @@ const stations = {
     "-3.141297",
     "52.656998"
   ],
-  "Welwyn": [
-    "-0.1932",
-    "51.8062"
-  ],
   "Welwyn Garden City": [
     "-0.203081",
     "51.800957"
@@ -10618,10 +10134,6 @@ const stations = {
   "Wem": [
     "-2.718784",
     "52.856293"
-  ],
-  "Wembley": [
-    "-0.3042",
-    "51.5560"
   ],
   "Wembley Central": [
     "-0.296592",
@@ -10788,12 +10300,8 @@ const stations = {
     "51.361248"
   ],
   "Weymouth": [
-    "",
-    ""
-  ],
-  "Weymouth Quay": [
-    "",
-    ""
+    "-2.455103",
+    "50.61515"
   ],
   "Whaley Bridge": [
     "-1.983448",
@@ -10903,10 +10411,6 @@ const stations = {
     "-1.20055",
     "53.280987"
   ],
-  "Whyteleafe": [
-    "-0.083390",
-    "51.308860"
-  ],
   "Whyteleafe South": [
     "-0.077684",
     "51.303474"
@@ -10938,10 +10442,6 @@ const stations = {
   "Widney Manor": [
     "-1.773647",
     "52.396175"
-  ],
-  "Wigan": [
-    "-2.6318",
-    "53.5448"
   ],
   "Wigan North Western": [
     "-2.632287",
@@ -10983,10 +10483,6 @@ const stations = {
     "-1.679499",
     "52.610817"
   ],
-  "Wimbledon": [
-    "-0.18171",
-    "51.4235"
-  ],
   "Wimbledon Chase": [
     "-0.214138",
     "51.409958"
@@ -11015,10 +10511,6 @@ const stations = {
     "-2.904339",
     "54.379745"
   ],
-  "Windsor": [
-    "-0.6095",
-    "51.4791"
-  ],
   "Windsor & Eton Central": [
     "-0.608806",
     "51.48275"
@@ -11026,10 +10518,6 @@ const stations = {
   "Windsor & Eton Riverside": [
     "-0.605804",
     "51.486309"
-  ],
-  "Winnersh": [
-    "-0.8794",
-    "51.4281"
   ],
   "Winnersh Station": [
     "-0.87795",
@@ -11147,10 +10635,6 @@ const stations = {
     "-1.37713",
     "50.898556"
   ],
-  "Woolwich": [
-    "0.063",
-    "51.488"
-  ],
   "Woolwich Arsenal": [
     "0.069883",
     "51.489815"
@@ -11162,10 +10646,6 @@ const stations = {
   "Wootton Wawen": [
     "-1.784561",
     "52.265831"
-  ],
-  "Worcester": [
-    "-2.22231",
-    "52.19123"
   ],
   "Worcester Foregate Street": [
     "-2.220885",
@@ -11218,10 +10698,6 @@ const stations = {
   "Wressle": [
     "-0.924169",
     "53.773212"
-  ],
-  "Wrexham": [
-    "-2.993",
-    "53.046"
   ],
   "Wrexham Central": [
     "-2.996385",
@@ -11278,10 +10754,6 @@ const stations = {
   "Yeoford": [
     "-3.726109",
     "50.77684"
-  ],
-  "Yeovil": [
-    "-2.6370",
-    "50.9452"
   ],
   "Yeovil Junction": [
     "-2.613198",

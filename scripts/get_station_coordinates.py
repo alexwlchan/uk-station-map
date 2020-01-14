@@ -72,7 +72,67 @@ if __name__ == "__main__":
         if row["country"] != "GB":
             continue
 
-        stations[row["name"]] = [row["longitude"], row["latitude"]];
+        # These are placeholder entries for places that have multiple stations:
+        # e.g. there is no "Bristol" station, only Parkway and Temple Meads.
+        #
+        # If you want all trains to either station, you could ask Trainline to
+        # find tickets to "Bristol", but that's not useful here.
+        if row["is_city"] == "t":
+            continue
+
+        if row["id"] in {
+            "22980",    # Another entry for London
+            "8271",     # London Southern Railway, I have no idea
+            "8243",     # Looks like an SNCF entry for Hull, maybe freight?
+            "8386",     # London City Airport, isn't a Network Rail station
+            "8217",     # Another SNCF entry, maybe more freight?
+            "8159",     # City entry for Larne
+            "8147",     # Freight entry for Fishguard Harbour
+            "8038",     # Weymouth Quay, disused station that doesn't have coords
+            "8035",     # Dover hoverport
+            "7986",     # Dover eastern docks, freight
+            "7867",     # Lincoln St. Mark's, disused station
+        }:
+            continue
+
+        if row["name"] in {
+            # Not actually a train station, but included in the Trainline database.
+            "London Victoria Coach Station",
+
+            # I have no idea what this is
+            "Gde bretagne",
+
+            # These are all included, but without lat/long data
+            "Gatwick",
+            "Gatwick Airport",
+            "Gatwick\u2014Airport",
+            "Devils bridge",  # Heritage railway
+
+            # We don't need seven entries for Heathrow!
+            "Heathrow Terminals 1-2-3 Bus",
+            "Heathrow Terminals 1-2-3 Rail",
+            "Heathrow Terminal 4 Bus",
+            "Heathrow Terminal 4 Rail",
+            "Heathrow Terminal 5 Bus",
+            "Heathrow Terminal 5 Rail",
+        }:
+            continue
+
+        coords = [row["longitude"], row["latitude"]]
+
+        if coords == ["", ""]:
+            print(f"⚠️ No coordinates for {row['name']}")
+            from pprint import pprint
+            pprint(row)
+            continue
+
+        stations[row["name"]] = coords
+
+    # https://tools.wmflabs.org/geohack/geohack.php?pagename=Gatwick_Airport_railway_station&params=51.1565_N_0.1609_W_type%3Arailwaystation_region%3AGB_scale%3A10000
+    stations["Gatwick Airport"] = ["51.1565", "-0.1609"]
+
+    # https://tools.wmflabs.org/geohack/geohack.php?params=52.376051_N_3.854077_W_type%3Arailwaystation_region%3AGB&pagename=Devil%27s_Bridge_railway_station
+    stations["Devil's Bridge"] = ["52.376051", "-3.854077"]
 
     for row in get_wikipedia_rows():
         if row["Location"] != "Northern Ireland":
