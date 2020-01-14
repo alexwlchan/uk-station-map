@@ -80,7 +80,19 @@ class MapManager {
   }
 }
 
-class PermalinkManager {
+// Keep track of the stations a user has selected in their local storage.
+//
+// Local storage is persistent across sessions, so when they return to the
+// app, it should remember the stations they've selected.
+//
+// The stations are stored as a semicolon-separated string, e.g.
+//
+//      Cardiff Bay;London Victoria;Cosham
+//
+// It assumes station names are stable across time, which seems reasonable.
+// If a station is deleted, we might fail to unpack that station name later.
+//
+class StateManager {
   constructor(stations) {
     this.stations = stations;
     this.selected = [];
@@ -97,15 +109,22 @@ class PermalinkManager {
   }
 }
 
+// Manages the <select> where the user picks the stations they've visited.
+//
+// This sets up an instance of Choices.js based on the "multiple select input"
+// example from https://github.com/jshjohnson/Choices
+//
+// It is also responsible for notifying the map/local storage when the user
+// adds or removes the station.
 class PickerManager {
-  constructor(pickerId, mapManager, permalinkManager, stations) {
+  constructor(pickerId, mapManager, stateManager, stations) {
     this.element = document.getElementById(pickerId);
 
-    this.createChoices(permalinkManager);
-    this.setupEventListeners(mapManager, permalinkManager, stations);
+    this.createChoices(stateManager);
+    this.setupEventListeners(mapManager, stateManager, stations);
   }
 
-  createChoices(permalinkManager) {
+  createChoices(stateManager) {
     const choices = [];
     for (var name in stations) {
       var data = stations[name];
@@ -119,57 +138,48 @@ class PickerManager {
 
     const items = [];
 
-    if (window.localStorage.getItem("hasEdits") === null ||
-        window.localStorage.getItem("stations") === null ||
-        window.localStorage.getItem("stations") === "") {
+    if (this.hasUserEdits()) {
+      const stationNames = window.localStorage.getItem("stations").split(";");
+    } else {
       // If this is a first run, pick a random selection of stations
       // to illustrate the principle.  Choose an integer between 3 and 7,
-      // then add those stations.
-      //
-      // If the user has ever edited the set of available stations, don't.
+      // then add that number of stations.
+      var stationNames = [];
       const randomCount = Math.floor((Math.random() * 5) + 3);
 
       for (var i = 0; i < randomCount; i++) {
         var chosenStation = choices[Math.floor(Math.random() * choices.length)];
 
-        var stationName = chosenStation.label;
-        var stationCoords = stations[stationName];
-        var longitude = stationCoords[0];
-        var latitude = stationCoords[1];
-        mapManager.addMarker(stationName, longitude, latitude);
-        permalinkManager.addStation(stationName);
-
-        items.push(chosenStation.value);
+        var chosenName = chosenStation.label;
+        stationNames.push(chosenName);
       }
-    } else {
-      const savedNames = window.localStorage.getItem("stations").split(";");
-      for (var i = 0; i < savedNames.length; i++) {
-        var stationName = savedNames[i]
-        var stationCoords = stations[stationName];
-        var longitude = stationCoords[0];
-        var latitude = stationCoords[1];
-        mapManager.addMarker(stationName, longitude, latitude);
-        permalinkManager.addStation(stationName);
+    }
 
-        items.push(stationName);
-      }
+    for (var i = 0; i < stationNames.length; i++) {
+      var stationName = stationNames[i];
+      var stationCoords = stations[stationName];
+      var longitude = stationCoords[0];
+      var latitude = stationCoords[1];
+      mapManager.addMarker(stationName, longitude, latitude);
+      stateManager.addStation(stationName);
+      items.push(stationName);
     }
 
     picker.setValue(items);
   }
 
-  setupEventListeners(mapManager, permalinkManager, stations) {
+  setupEventListeners(mapManager, stateManager, stations) {
     this.element.addEventListener(
       "addItem",
       function(event) {
-        window.localStorage.setItem("hasEdits", true);
+        this.markAsUserEdited();
 
         var stationName = event.detail.label;
         var stationCoords = stations[stationName];
         var longitude = stationCoords[0];
         var latitude = stationCoords[1];
         mapManager.addMarker(stationName, longitude, latitude);
-        permalinkManager.addStation(stationName);
+        stateManager.addStation(stationName);
       },
       false,
     )
@@ -177,13 +187,33 @@ class PickerManager {
     this.element.addEventListener(
       "removeItem",
       function(event) {
-        window.localStorage.setItem("hasEdits", true);
+        this.markAsUserEdited();
 
         var stationName = event.detail.label;
         mapManager.removeMarker(stationName);
-        permalinkManager.removeStation(stationName);
+        stateManager.removeStation(stationName);
       },
       false,
+    )
+  }
+
+  // When the app starts, we display a random selection of stations to illustrate
+  // how the map works.
+  //
+  // However, if the user has used the app before, we want to track that -- and
+  // restore the stations they've already set, not overwrite them with new ones.
+  //
+  // We use the `hasEdits` field to track whether the user has ever edited the
+  // list of stations.
+  markAsUserEdited() {
+    window.localStorage.setItem("hasEdits", true);
+  }
+
+  hasUserEdits() {
+    return (
+      window.localStorage.getItem("hasEdits") !== null &&
+      window.localStorage.getItem("stations") !== null &&
+      window.localStorage.getItem("stations") !== ""
     )
   }
 }

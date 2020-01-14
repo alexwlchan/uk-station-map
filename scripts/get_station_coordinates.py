@@ -152,6 +152,11 @@ if __name__ == "__main__":
 
         stations["/".join(names)] = [match.group("longitude"), match.group("latitude")]
 
+    # We use a semicolon to delimit station names in `managers.js` (look at how
+    # we store station names in window.localStorage), so finding a station with
+    # a semicolon in the name would be tricky.
+    assert all(";" not in name for name in stations)
+
     json_string = json.dumps(stations, indent=2, sort_keys=True)
     js_string = f"const stations = {json_string};"
 
