@@ -81,33 +81,30 @@ if __name__ == "__main__":
             continue
 
         if row["id"] in {
-            "22980",    # Another entry for London
-            "8271",     # London Southern Railway, I have no idea
-            "8243",     # Looks like an SNCF entry for Hull, maybe freight?
-            "8386",     # London City Airport, isn't a Network Rail station
-            "8217",     # Another SNCF entry, maybe more freight?
-            "8159",     # City entry for Larne
-            "8147",     # Freight entry for Fishguard Harbour
-            "8038",     # Weymouth Quay, disused station that doesn't have coords
-            "8035",     # Dover hoverport
-            "7986",     # Dover eastern docks, freight
-            "7867",     # Lincoln St. Mark's, disused station
+            "22980",  # Another entry for London
+            "8271",  # London Southern Railway, I have no idea
+            "8243",  # Looks like an SNCF entry for Hull, maybe freight?
+            "8386",  # London City Airport, isn't a Network Rail station
+            "8217",  # Another SNCF entry, maybe more freight?
+            "8159",  # City entry for Larne
+            "8147",  # Freight entry for Fishguard Harbour
+            "8038",  # Weymouth Quay, disused station that doesn't have coords
+            "8035",  # Dover hoverport
+            "7986",  # Dover eastern docks, freight
+            "7867",  # Lincoln St. Mark's, disused station
         }:
             continue
 
         if row["name"] in {
             # Not actually a train station, but included in the Trainline database.
             "London Victoria Coach Station",
-
             # I have no idea what this is
             "Gde bretagne",
-
             # These are all included, but without lat/long data
             "Gatwick",
             "Gatwick Airport",
             "Gatwick\u2014Airport",
             "Devils bridge",  # Heritage railway
-
             # We don't need seven entries for Heathrow!
             "Heathrow Terminals 1-2-3 Bus",
             "Heathrow Terminals 1-2-3 Rail",
@@ -123,6 +120,7 @@ if __name__ == "__main__":
         if coords == ["", ""]:
             print(f"⚠️ No coordinates for {row['name']}")
             from pprint import pprint
+
             pprint(row)
             continue
 
