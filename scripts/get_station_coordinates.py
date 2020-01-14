@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
         stations["/".join(names)] = [match.group("longitude"), match.group("latitude")]
 
-    json_string = json.dumps(stations, separators=(',',':'), sort_keys=True)
+    json_string = json.dumps(stations, indent=2, sort_keys=True)
     js_string = f"const stations = {json_string};"
 
     with open("static/stations.js", "w") as out_file:
