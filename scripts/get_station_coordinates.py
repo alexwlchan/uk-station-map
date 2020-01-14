@@ -152,7 +152,7 @@ if __name__ == "__main__":
         )
         assert match is not None, long_lat_coords
 
-        stations["/".join(names)] = [match.group("longitude"), match.group("latitude")]
+        stations["/".join(names)] = [match.group("latitude"), match.group("longitude")]
 
     # We use a semicolon to delimit station names in `managers.js` (look at how
     # we store station names in window.localStorage), so finding a station with
