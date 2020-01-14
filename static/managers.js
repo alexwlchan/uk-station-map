@@ -64,11 +64,11 @@ class MapManager {
   }
 
   addMarker(label, long, lat) {
-    const marker = L.circle([lat, long], {
+    const marker = L.circleMarker([lat, long], {
       fill: true,
       color: '#0b9e00',
       fillColor: 'rgba(11, 158, 0, 0.3)',
-      radius: 7500,
+      radius: 5,
     }).addTo(this.map);
 
     this.markerCache[label] = marker;
