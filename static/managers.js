@@ -124,6 +124,22 @@ class PickerManager {
     this.setupEventListeners(mapManager, stateManager, stations);
   }
 
+  // When the app starts, we display a random selection of stations to illustrate
+  // how the map works.
+  //
+  // However, if the user has used the app before, we want to track that -- and
+  // restore the stations they've already set, not overwrite them with new ones.
+  //
+  // We use the `hasEdits` field to track whether the user has ever edited the
+  // list of stations.
+  hasUserEdits() {
+    return (
+      window.localStorage.getItem("hasEdits") === "true" &&
+      window.localStorage.getItem("stations") !== null &&
+      window.localStorage.getItem("stations") !== ""
+    )
+  }
+
   createChoices(stateManager) {
     const choices = [];
     for (var name in stations) {
@@ -139,7 +155,7 @@ class PickerManager {
     const items = [];
 
     if (this.hasUserEdits()) {
-      const stationNames = window.localStorage.getItem("stations").split(";");
+      var stationNames = window.localStorage.getItem("stations").split(";");
     } else {
       // If this is a first run, pick a random selection of stations
       // to illustrate the principle.  Choose an integer between 3 and 7,
@@ -172,7 +188,7 @@ class PickerManager {
     this.element.addEventListener(
       "addItem",
       function(event) {
-        this.markAsUserEdited();
+        window.localStorage.setItem("hasEdits", true);
 
         var stationName = event.detail.label;
         var stationCoords = stations[stationName];
@@ -187,33 +203,13 @@ class PickerManager {
     this.element.addEventListener(
       "removeItem",
       function(event) {
-        this.markAsUserEdited();
+        window.localStorage.setItem("hasEdits", true);
 
         var stationName = event.detail.label;
         mapManager.removeMarker(stationName);
         stateManager.removeStation(stationName);
       },
       false,
-    )
-  }
-
-  // When the app starts, we display a random selection of stations to illustrate
-  // how the map works.
-  //
-  // However, if the user has used the app before, we want to track that -- and
-  // restore the stations they've already set, not overwrite them with new ones.
-  //
-  // We use the `hasEdits` field to track whether the user has ever edited the
-  // list of stations.
-  markAsUserEdited() {
-    window.localStorage.setItem("hasEdits", true);
-  }
-
-  hasUserEdits() {
-    return (
-      window.localStorage.getItem("hasEdits") !== null &&
-      window.localStorage.getItem("stations") !== null &&
-      window.localStorage.getItem("stations") !== ""
     )
   }
 }
