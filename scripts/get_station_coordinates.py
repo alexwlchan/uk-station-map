@@ -132,6 +132,8 @@ if __name__ == "__main__":
     # https://tools.wmflabs.org/geohack/geohack.php?params=52.376051_N_3.854077_W_type%3Arailwaystation_region%3AGB&pagename=Devil%27s_Bridge_railway_station
     stations["Devil's Bridge"] = ["52.376051", "-3.854077"]
 
+    stations["Cambridge North"] = ["52.2239699", "0.1585111"]
+
     for row in get_wikipedia_rows():
         if row["Location"] != "Northern Ireland":
             continue
