@@ -165,4 +165,10 @@ if __name__ == "__main__":
     with open("static/stations.js", "w") as out_file:
         out_file.write(js_string)
 
+    min_json_string = json.dumps(stations, separators=(',',':'))
+    min_js_string = f"const stations={min_json_string};"
+
+    with open("static/stations.min.js", "w") as out_file:
+        out_file.write(min_js_string)
+
     print("✨ Written station coordinates to stations.js ✨")
