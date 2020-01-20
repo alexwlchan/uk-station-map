@@ -6,4 +6,6 @@
 #
 beautifulsoup4==4.8.2     # via bs4
 bs4==0.0.1
+cssmin==0.2.0
+jsmin==2.2.2
 soupsieve==1.9.5          # via beautifulsoup4
