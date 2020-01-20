@@ -127,12 +127,12 @@ if __name__ == "__main__":
         stations[row["name"]] = coords
 
     # https://tools.wmflabs.org/geohack/geohack.php?pagename=Gatwick_Airport_railway_station&params=51.1565_N_0.1609_W_type%3Arailwaystation_region%3AGB_scale%3A10000
-    stations["Gatwick Airport"] = ["51.1565", "-0.1609"]
+    stations["Gatwick Airport"] = ["-0.1609", "51.1565"]
 
     # https://tools.wmflabs.org/geohack/geohack.php?params=52.376051_N_3.854077_W_type%3Arailwaystation_region%3AGB&pagename=Devil%27s_Bridge_railway_station
-    stations["Devil's Bridge"] = ["52.376051", "-3.854077"]
+    stations["Devil's Bridge"] = ["-3.854077", "52.376051"]
 
-    stations["Cambridge North"] = ["52.2239699", "0.1585111"]
+    stations["Cambridge North"] = ["0.1585111", "52.2239699"]
 
     for row in get_wikipedia_rows():
         if row["Location"] != "Northern Ireland":
